@@ -1,2 +1,26 @@
-observability
+observability>LMT,logging ,monitoring and tracing 
 ==============
+https://github.com/kodekloudhub/efk-stack
+
+ELK>https://youtu.be/NML6RxwQWQs?si=mGJFM4bNDdSKuvt0
+EFK >https://youtu.be/HGTBANm0VY4?si=7UO7eax1HlDHBr1p
+
+centrailzed log storage,logging centrally
+
+ELK
+L>>logstash
+
+ElastiSearch
+=============
+master node,data node,data ingest node,ml node,transform node etc etc
+ML node>>monitors realtime time,DDOS attacks etc 
+cluster architecture
+data is stored in json format as documents>indexing>fast seraching
+CRUD 
+documents fundatmental data unit in ES 
+inverted index 
+logs are grouped or mapped with index
+index>logical grouping/container
+shards,replica(copy of shard in another node) as optiminzation and DR strategy
+ES>schema-less 
+
