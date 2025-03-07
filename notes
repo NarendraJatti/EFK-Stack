@@ -24,3 +24,33 @@ index>logical grouping/container
 shards,replica(copy of shard in another node) as optiminzation and DR strategy
 ES>schema-less 
 
+commands
+========
+developer tool inside kibana to interact with ES cluster
+GET /_cluster/health
+GET /_cluster/stats
+GET /_cat/indices
+PUT /products>>create index products
+GET /products/_settings
+
+
+
+kibana
+========
+on top of ES
+basic visualtions,time series visualizations and geospatial visualtizations
+
+kibana query language >>KQL>>querying elastic serch  data 
+behind the scene>KQL queries are translated into elastic search query DSL requests
+syntax:field queries
+field_name : "value"
+status: "200"
+field_name:"val*">>wildcard queries
+user: "jhon*"
+logical operators:
+status:"404" OR status:"500"
+regular expressions:
+field_name > value or 
+field_name < value 
+bytes > 1000 
+we can combile all these
