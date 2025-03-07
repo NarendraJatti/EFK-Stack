@@ -37,7 +37,24 @@ GET /products/_settings
 
 kibana
 ========
+Kibana is a powerful visualization and exploration tool used with Elasticsearch for searching, analyzing, and visualizing data. The process typically involves multiple steps, such as file ingestion, pipeline creation, data indexing, and creating index patterns to visualize the data.
+ile needs to be uploaded to Elasticsearch. You can either upload the file directly through Kibana's "Data Upload" feature or use Logstash/Beats to send the data to Elasticsearch.
+Once the file is uploaded, you typically want to process it before sending it to Elasticsearch.
+Indexing means that Elasticsearch processes and stores the data in a structure optimized for searching and retrieving. When data is ingested, it's stored in documents within an index.
+For example, after uploading the server log CSV file, each row becomes a document in an Elasticsearch index. Let’s say the index is called server_logs.
+
+steps in kibana
+============
+Full Example Process Recap:
+File Uploaded: You upload a CSV file containing server logs to Elasticsearch.
+Ingest Pipeline Created: You create an ingest pipeline to convert the timestamp to a date field and other fields to integers.
+Data Indexed: The data is indexed in Elasticsearch under the index server_logs.
+Index Pattern Created: You create an index pattern server_logs* to allow Kibana to visualize the data.
+Visualizations Created: You use Kibana to build visualizations based on the indexed data, such as bar charts for status codes and line graphs for request times.
+This entire process allows you to go from raw data to visual insights using Kibana.
+
 on top of ES
+Now that the index has been created, you should see multiple options at the bottom of the page
 basic visualtions,time series visualizations and geospatial visualtizations
 
 kibana query language >>KQL>>querying elastic serch  data 
@@ -54,3 +71,9 @@ field_name > value or
 field_name < value 
 bytes > 1000 
 we can combile all these
+KQL>>case senstive
+
+
+kubectl get svc elasticsearch -n efk -o jsonpath='{.spec.clusterIP}' | xargs -I {} curl -X GET "http://{}:9200/_cluster/health?pretty"
+
+drill down trick..we can analyze details for particular events/users..
