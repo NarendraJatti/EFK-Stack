@@ -77,3 +77,20 @@ KQL>>case senstive
 kubectl get svc elasticsearch -n efk -o jsonpath='{.spec.clusterIP}' | xargs -I {} curl -X GET "http://{}:9200/_cluster/health?pretty"
 
 drill down trick..we can analyze details for particular events/users..
+
+fluentD/fluentbit
+============
+logstash
+logshipper,high throughput
+logger aggreator
+independent pod 
+input,filter and output plugins
+tail plugin,systemd plugin,tcp pluging>>input plugin
+grep,modify ,parser plugin>>filter plugin
+ES plugin,http plugin>>output plugin
+
+kubectl config set-context --current --namespace=efk
+
+
+tatefulSet provides each Pod with a unique, stable identifier and its own PersistentVolumeClaim (PVC), ensuring that even if a Pod is rescheduled, it will continue to use the same PersistentVolume (PV), maintaining data integrity.
+Deployment, on the other hand, does not guarantee stable, persistent storage. Pods in a Deployment can be rescheduled to use new volumes, leading to potential data loss.
