@@ -94,3 +94,13 @@ kubectl config set-context --current --namespace=efk
 
 tatefulSet provides each Pod with a unique, stable identifier and its own PersistentVolumeClaim (PVC), ensuring that even if a Pod is rescheduled, it will continue to use the same PersistentVolume (PV), maintaining data integrity.
 Deployment, on the other hand, does not guarantee stable, persistent storage. Pods in a Deployment can be rescheduled to use new volumes, leading to potential data loss.
+
+kubectl logs -f pod-name
+kubectl logs pod-name
+
+elastic serach and kibana version should be matching.
+
+kubectl  node  controlplane
+
+scaling ES and kibana
+=================

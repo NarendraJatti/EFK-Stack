@@ -1,0 +1,65 @@
+# PersistentVolume for Node 1
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-elasticsearch-node1
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/elasticsearch-node1  # Storage path on node1
+  nodeAffinity:  # Ensure this PV can only be bound on node1
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node1  # Tie this PV to node1
+  storageClassName: manual
+---
+# PersistentVolume for Node 2
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-elasticsearch-node2
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/elasticsearch-node2  # Storage path on node2
+  nodeAffinity:  # Ensure this PV can only be bound on node2
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node2  # Tie this PV to node2
+  storageClassName: manual
+---
+# PersistentVolume for Node 3
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-elasticsearch-node3
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/elasticsearch-node3  # Storage path on node3
+  nodeAffinity:  # Ensure this PV can only be bound on node3
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - node3  # Tie this PV to node3
+  storageClassName: manual
