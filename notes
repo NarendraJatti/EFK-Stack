@@ -32,7 +32,11 @@ GET /_cluster/stats
 GET /_cat/indices
 PUT /products>>create index products
 GET /products/_settings
+curl -X GET "http://<elasticsearch-host>:9200/_cat/indices?v"
 
+
+
+kubectl exec -it <pod-name> -n efk -- /bin/sh
 
 
 kibana
