@@ -13,3 +13,5 @@ Observability with EFK
 <img width="956" alt="image" src="https://github.com/user-attachments/assets/240f465a-7c2e-4424-ba7a-69e6ca7fa6a6" />
 
 <img width="953" alt="image" src="https://github.com/user-attachments/assets/6d79830f-9536-4ec1-bcd1-744e9ec15b95" />
+
+<img width="724" alt="image" src="https://github.com/user-attachments/assets/68e96f51-2a84-4637-b71b-470b1f7acffd" />
