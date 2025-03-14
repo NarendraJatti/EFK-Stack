@@ -2,6 +2,12 @@ observability>LMT,logging ,monitoring and tracing
 ==============
 https://github.com/kodekloudhub/efk-stack
 
+https://www.youtube.com/watch?v=_rPq_NKB7Dc >>good
+
+https://www.youtube.com/watch?v=8nWh1GLd7nY
+
+
+
 ELK>https://youtu.be/NML6RxwQWQs?si=mGJFM4bNDdSKuvt0
 EFK >https://youtu.be/HGTBANm0VY4?si=7UO7eax1HlDHBr1p
 
@@ -37,6 +43,12 @@ curl -X GET "http://<elasticsearch-host>:9200/_cat/indices?v"
 
 
 kubectl exec -it <pod-name> -n efk -- /bin/sh
+kubectl exec -it simple-webapp-deployment-65596679c5-rgrx2 -n efk -- /bin/sh
+
+sh-5.0$ ls /usr/share/elasticsearch/data/indices
+
+curl -X GET "localhost:9200/logstash-2025.03.14/_search?pretty&q=*:*"
+
 
 
 kibana
